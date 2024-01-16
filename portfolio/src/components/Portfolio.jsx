@@ -7,11 +7,13 @@ const Portfolio = () => {
       id: 1,
       src: picture,
       links: "https://maishalondon.onrender.com",
+      github: "https://github.com/Ryanmugo/mern-hotel-bookingApp",
     },
     {
       id: 2,
       src: estate,
       links: "https://mern-estate-kcla.onrender.com",
+      github: "https://github.com/Ryanmugo/Emba-Enterprises",
     },
   ];
   return (
@@ -28,7 +30,7 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-8 px-12 sm:px-8">
-          {portfolios.map(({ id, src, links }) => (
+          {portfolios.map(({ id, src, links, github }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
@@ -42,7 +44,10 @@ const Portfolio = () => {
                 >
                   Demo
                 </button>
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                <button
+                  onClick={() => window.open(github)}
+                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
+                >
                   Code
                 </button>
               </div>
